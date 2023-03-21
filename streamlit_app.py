@@ -59,8 +59,7 @@ streamlit.write('The user entered ')
 
 ## inserting values from streamlite
 streamlit.write('Thanks for adding ', add_my_fruit)
-
-#my_cur.execute("insert into pc_rivery_db.public.fruit_load_list Values('from streamlite')")
+my_cur.execute("insert into pc_rivery_db.public.fruit_load_list Values('from streamlit')")
 
 
 
