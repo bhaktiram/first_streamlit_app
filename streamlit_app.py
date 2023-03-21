@@ -39,8 +39,6 @@ else
 #streamlit.write('The user entered ', fruit_choice)
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 #streamlit.text(fruityvice_response.json())
-
-
 # write your own comment -what does the next line do? 
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
@@ -49,7 +47,7 @@ except URLError as e:
 streamlit.error() 
 
 # dont run anything past here
-streamlit.stop
+#streamlit.stop
 
 import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
