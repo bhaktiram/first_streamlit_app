@@ -50,3 +50,6 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("The Fruitload Container")
 #streamlit.text(my_data_row)
 streamlit.dataframe(my_data_rows)
+## inserting values from streamlite
+streamlit.write('Thanks for adding ', add_my_fruit)
+my_cur.execute("insert into pc_rivery_db.public.fruit_load_list Values('from streamlite')")
