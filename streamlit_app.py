@@ -50,6 +50,17 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("The Fruitload Container")
 #streamlit.text(my_data_row)
 streamlit.dataframe(my_data_rows)
+
+## adding new table and showing what user has selected in text
+
+streamlit.header("Fruityvice Fruit Advice!")
+add_my_fruit = streamlit.text_input('What fruit would you like add')
+streamlit.write('The user entered ', fruit_choice)
+
 ## inserting values from streamlite
 streamlit.write('Thanks for adding ', add_my_fruit)
-my_cur.execute("insert into pc_rivery_db.public.fruit_load_list Values('from streamlite')")
+
+#my_cur.execute("insert into pc_rivery_db.public.fruit_load_list Values('from streamlite')")
+
+
+
