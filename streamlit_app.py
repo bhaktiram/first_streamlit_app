@@ -94,7 +94,7 @@ def get_fuit_load_list():
          return my_cur.fetchall()
     
 #add a button to fruit load list
-if streamlit.button('Get the Fruit Load list')
+if streamlit.button('Get the Fruit Load list'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     my_data_rows = get_fuit_load_list()
     streamlit.dataframe(my_data_rows)
