@@ -49,7 +49,7 @@ except URLError as e:
         
 #without function process
 
-streamlit.header("Fruityvice Fruit Advice!")
+#streamlit.header("Fruityvice Fruit Advice!")
 
 #fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 #streamlit.write('The user entered ', fruit_choice)
@@ -87,13 +87,14 @@ streamlit.header("Fruityvice Fruit Advice!")
 #streamlit.dataframe(my_data_rows)
 
 #using button
-streamlit.header("The Fruitload Container")
+streamlit.header("The Fruitload list Container")
 def get_fuit_load_list():
     with my_cnx.cursor() as my_cur:
          my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
-         return my_cur.fetchone()
+         return my_cur.fetchall()
+    
 #add a button to fruit load list
-if streamlit.button("Get the Fruit Load list")
+if streamlit.button('Get the Fruit Load list')
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     my_data_rows = get_fuit_load_list()
     streamlit.dataframe(my_data_rows)
