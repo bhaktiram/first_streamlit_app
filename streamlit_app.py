@@ -96,9 +96,8 @@ if streamlit.button('Get the Fruit Load list'):
 #add insert function withbutton    
 def insert_row_snowflake(new_fruit):    
     with my_cnx.cursor() as my_cur:
-         my_cur.execute("insert into pc_rivery_db.public.fruit_load_list Values('from streamlit')")
+         my_cur.execute("insert into pc_rivery_db.public.fruit_load_list Values('" + new_fruit +'")")
          return 'Thanks for adding ' + new_fruit 
-    
     
     
 add_my_fruit = streamlit.text_input('What fruit would you like add')
@@ -107,7 +106,7 @@ if streamlit.button('add a fruit to list'):
     back_from_function = insert_row_snowflake(add_my_fruit)
     streamlit.text(back_from_function)
 
-    # adding new table and showing what user has selected in text
+# adding new table and showing what user has selected in text
 #streamlit.header("Fruityvice Fruit Advice!")
 #add_my_fruit = streamlit.text_input('What fruit would you like add')
 #streamlit.write('The user entered ')
